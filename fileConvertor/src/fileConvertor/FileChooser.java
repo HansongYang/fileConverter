@@ -15,7 +15,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
   
 public class FileChooser extends JPanel{  
     File file;
-	int num;
+    int num;
       
     public void setUp() {  
         JFileChooser jfc=new JFileChooser();  
@@ -31,8 +31,7 @@ public class FileChooser extends JPanel{
         System.out.println(jfc.getSelectedFile().getName());   
     }  
     
-    public void infoBox(String infoMessage, String titleBar)
-    {
+    public void infoBox(String infoMessage, String titleBar){
         JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
     }
     
