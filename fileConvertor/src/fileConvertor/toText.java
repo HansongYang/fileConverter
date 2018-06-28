@@ -23,14 +23,14 @@ public class toText{
 	public void parseDoc(String filename){
 	  	 POIFSFileSystem fs = null;
 	     try {
-			 fs = new POIFSFileSystem(new FileInputStream(filename));
-		     HWPFDocument doc = new HWPFDocument(fs);
-			 WordExtractor we = new WordExtractor(doc);
-			 String text = we.getText();
-		     File fil = new File(filename.substring(0,filename.lastIndexOf("."))+  ".txt");
-			 Writer output = new BufferedWriter(new FileWriter(fil));
-			 output.write(text);
-			 output.close();
+		fs = new POIFSFileSystem(new FileInputStream(filename));
+		HWPFDocument doc = new HWPFDocument(fs);
+		WordExtractor we = new WordExtractor(doc);
+		String text = we.getText();
+		File fil = new File(filename.substring(0,filename.lastIndexOf("."))+  ".txt");
+		Writer output = new BufferedWriter(new FileWriter(fil));
+		output.write(text);
+		output.close();
 		} catch (Exception exep) {
 			 System.out.println(exep);
 		}
@@ -39,11 +39,11 @@ public class toText{
 	public void parseDocx(String filename){
 		File file = null;
 	    try {
-			file = new File(filename);
-			FileInputStream fis = new FileInputStream(file);
-			XWPFDocument doc = new XWPFDocument(fis);
-			XWPFWordExtractor ex = new XWPFWordExtractor(doc);
-			String text = ex.getText();
+		file = new File(filename);
+		FileInputStream fis = new FileInputStream(file);
+		XWPFDocument doc = new XWPFDocument(fis);
+		XWPFWordExtractor ex = new XWPFWordExtractor(doc);
+		String text = ex.getText();
 	        File fil = new File(filename.substring(0,filename.lastIndexOf("."))+  ".txt");
 	        Writer output = new BufferedWriter(new FileWriter(fil));
 	        output.write(text);
