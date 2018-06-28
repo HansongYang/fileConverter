@@ -38,7 +38,7 @@ public class pdfAndText {
 			pdDoc.close();
 		}
 		PrintWriter pw = new PrintWriter(filename.substring(0,filename.lastIndexOf(".")) + ".txt");
-    	pw.print(parsedText);
+    	        pw.print(parsedText);
 		pw.close();
 	}
 
